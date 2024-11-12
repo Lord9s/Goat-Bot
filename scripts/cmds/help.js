@@ -49,11 +49,11 @@ module.exports = {
 				const startSlice = numberOfOnePage * page - numberOfOnePage;
 				i = startSlice;
 				const returnArray = arrayInfo.slice(startSlice, startSlice + numberOfOnePage);
-				const characters = "━━━━━━━━━━━━━";
+				const characters = "━━━━━━━━━━━━━━━━━━━━━━━━━━";
 
 				msg += returnArray.reduce((text, item) => text += `【${++i}】 ${item.data}\n`, '');
 
-				const doNotDelete = "[ 🐐 | Project Goat Bot ]";
+				const doNotDelete = "[ 🙃 | 𝙇𝙤𝙧𝙙 𝙠𝙞𝙣𝙜 ]";
 				message.reply(`${characters}\n${msg}${characters}\nTrang [ ${page}/${Math.ceil(arrayInfo.length / numberOfOnePage)} ]\nHiện tại bot có ${globalGoat.commands.size} lệnh có thể sử dụng\n► Gõ ${prefix}help <số trang> để xem danh sách lệnh\n► Gõ ${prefix}help <tên lệnh> để xem chi tiết cách sử dụng lệnh đó\n${characters}\n${doNotDelete}`);
 			}
 			else if (sortHelp == "category") {
@@ -70,8 +70,8 @@ module.exports = {
 					data.names.sort();
 					msg += `${categoryUpcase}\n${data.names.join(", ")}\n\n`;
 				}
-				const characters = "━━━━━━━━━━━━━";
-				const doNotDelete = "[ 🐐 | Project Goat Bot ]";
+				const characters = "━━━━━━━━━━━━━━━━━━━━━━━━━━";
+				const doNotDelete = "[ 🙃 | 𝙇𝙤𝙧𝙙 𝙠𝙞𝙣𝙜 ]";
 				message.reply(`${msg}${characters}\n► Hiện tại bot có ${globalGoat.commands.size} lệnh có thể sử dụng, gõ ${prefix}help <tên lệnh> để xem chi tiết cách sử dụng lệnh đó\n${characters}\n${doNotDelete}`);
 			}
 		}
@@ -102,9 +102,9 @@ module.exports = {
 			else if (typeof (configCommand.author) == "string") author = configCommand.author;
 
 			const nameUpperCase = configCommand.name.toUpperCase();
-			const title = "━━━━━━━━━━━━━"
+			const title = "━━━━━━━━━━━━━━━━━━━━━━━━━━"
 				+ "\n" + nameUpperCase
-				+ "\n" + "━━━━━━━━━━━━━";
+				+ "\n" + "━━━━━━━━━━━━━━━━━━━━━━━━━━";
 
 			let msg = `${title}\n► Mô tả: ${configCommand.longDescription || "Không có"}`
 				+ `\n► Version: ${configCommand.version}`
@@ -120,12 +120,12 @@ module.exports = {
 			if (typeof (guide) == "string") guide = {
 				body: guide
 			};
-			msg += '\n━━━━━━━━━━━━━\n'
+			msg += '\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n'
 				+ '► Hướng dẫn cách dùng:\n'
 				+ guide.body
 					.replace(/\{prefix\}|\{p\}/g, prefix)
 					.replace(/\{name\}|\{n\}/g, configCommand.name)
-				+ '\n━━━━━━━━━━━━━\n'
+				+ '\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n'
 				+ '► Chú thích:\n• Nội dung bên trong <XXXXX> là có thể thay đổi\n• Nội dung bên trong [a|b|c] là a hoặc b hoặc c';
 
 			const formSendMessage = {
